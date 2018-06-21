@@ -21,21 +21,6 @@ import org.springframework.core.env.Environment;
 @ComponentScan
 @PropertySource("classpath:global.properties")//placeholder file properties
 public class Container {
-    /*
-    get value from file properties use annotation @Value and @PropertySource
-    */
-    @Value("${name}")//get value form file properties global.properties
-    private String name;
-    @Value("${lastName}")//get value form file properties global.properties
-    private String lastName;
-
-    @Bean
-    public Entities entities2() {
-        Entities entities = new Entities();
-        entities.setLastName(name);
-        entities.setName(lastName);
-        return entities;
-    }
 
     /*
     get value from file properties use annotation @PropertySource and use env is properties placeholder to get value
@@ -51,21 +36,6 @@ public class Container {
         return entities;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 
     public void setEnv(Environment env) {
         this.env = env;

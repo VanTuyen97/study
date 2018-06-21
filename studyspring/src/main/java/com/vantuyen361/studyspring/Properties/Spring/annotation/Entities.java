@@ -6,15 +6,17 @@
 package com.vantuyen361.studyspring.Properties.Spring.annotation;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 /**
  *
  * @author vantuyen
  */
+@Component
 public class Entities {
+    @Value("${name}")//get value form file properties global.properties
     private String name;
+    @Value("${lastName}")//get value form file properties global.properties
     private String lastName;
     
     @Override
