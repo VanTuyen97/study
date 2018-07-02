@@ -1,5 +1,5 @@
-# Examples for spring in my study
-Each package in project is a example for feature in spring, each package contain a Main class used to run the examples.
+# Examples for spring in my study  
+Each package in project is a example for feature in spring, each package contain a Main class used to run the examples.  
 ## prerequisites
 ```
 maven
