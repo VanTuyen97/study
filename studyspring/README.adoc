@@ -5,6 +5,6 @@
 maven
 ```
 ## reference
-- use [namespace](http://www.springframework.org/schema/) configured file xml in spring 
-- [Spring Framework Documentation](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/index.html)
-- ebook [Spring in Action](https://www.amazon.com/Spring-Action-Covers-4/dp/161729120X)
+- use [namespace] (http://www.springframework.org/schema/) configured file xml in spring 
+- [Spring Framework Documentation] (https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/index.html)
+- ebook [Spring in Action] (https://www.amazon.com/Spring-Action-Covers-4/dp/161729120X)
