@@ -17,5 +17,7 @@ public class Main {
         ApplicationContext context = new AnnotationConfigApplicationContext(com.vantuyen361.studyspring.AOP.introduced.annotation.Config.class);
         Object location =  context.getBean("location");
         System.out.println(((Person)location).detail() + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        System.out.println(((Person)location).detail() + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        System.out.println(((Person)location).detail() + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
     }
 }

@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class AOP {
-    @DeclareParents(value="com.vantuyen361.studyspring.Location"//can ispackage.class+ to specifies this class and class extends this
+    @DeclareParents(value="com.vantuyen361.studyspring.AOP.introduced.annotation.Location"//can ispackage.class+ to specifies this class and class extends this
             , defaultImpl=com.vantuyen361.studyspring.AOP.introduced.annotation.Student.class)
     public static Person person;
 }

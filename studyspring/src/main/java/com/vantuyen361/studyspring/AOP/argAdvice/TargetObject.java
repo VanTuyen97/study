@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.vantuyen361.studyspring.AOP.introduced.annotation;
-import org.springframework.context.annotation.Scope;
-import org.springframework.context.annotation.ScopedProxyMode;
+package com.vantuyen361.studyspring.AOP.argAdvice;
+
 import org.springframework.stereotype.Component;
 
 /**
@@ -13,5 +12,14 @@ import org.springframework.stereotype.Component;
  * @author vantuyen
  */
 @Component
-public class Location{    
+public class TargetObject {
+    public String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

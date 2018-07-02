@@ -6,22 +6,27 @@
 package com.vantuyen361.studyspring.AOP.introduced.annotation;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 
 /**
  *
  * @author vantuyen
  */
-
-@Component
+@Scope(value=ConfigurableBeanFactory.SCOPE_PROTOTYPE, proxyMode=ScopedProxyMode.TARGET_CLASS)
 public class Student implements Person{
+    static int index = 0;
+    public int i;
     public Student(){
         name = "tuyen";
         age = 22;
+        index +=1;
+        i=index;
     }
     @Override
     public String detail() {
-        return this.name + String.valueOf(this.age) + "toi la nguyen van tuyen"; 
+        return this.name + String.valueOf(this.age) + "number of object is: " + i; 
     }
     
     @Value("#{'nguyen van tuyen'}")

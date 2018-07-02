@@ -5,7 +5,6 @@
  */
 package com.vantuyen361.studyspring.AOP.introduced.annotation;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
@@ -15,7 +14,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * @author vantuyen
  */
 @EnableAspectJAutoProxy
-@ComponentScan("com.vantuyen361.studyspring")
+@ComponentScan
 @Configuration
 public class Config {
 }
