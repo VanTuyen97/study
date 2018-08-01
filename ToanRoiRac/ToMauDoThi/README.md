@@ -31,6 +31,7 @@ Dữ liệu vào dothi.txt         Dữ liệu ra dothitomau.dot
                               }
 ```
 ## Giải<br>
+`
 - Dựa theo "nhiệm vụ", ta cần sắp xếp dãy các đỉnh theo thứ tự phù hợp: chứng minh cho biểu đồ **liên thông** và **không chính quy**.
   - Chọn một đỉnh trong G có bậc ≤ k − 1. Gán nó là v(n).
   - Liệt kê cho các hàng xóm của vn theo thứ tự là: v(n−1); v(n−2); · · · ; v(n−r):
@@ -38,7 +39,8 @@ Dữ liệu vào dothi.txt         Dữ liệu ra dothitomau.dot
   - Liệt kê các hàng xóm của v(n−2) chưa được liệt kê. Có ≤ k − 1 đỉnh.
   - Và cứ thế đến khi mọi đỉnh của G được liệt kê. (do G liên thông)
   
-nếu là biểu đồ **không liên thông** thì duyệt tương tự cho tất cả các thành phần liên thông từ bất kỳ một đỉnh.<br>
-nếu **chính quy** chọn một đỉnh bất kỳ rồi làm tương tự.
+  nếu là biểu đồ **không liên thông** thì duyệt tương tự cho tất cả các thành phần liên thông từ bất kỳ một đỉnh.<br>
+  nếu **chính quy** chọn một đỉnh bất kỳ rồi làm tương tự.
  - Gán màu cho các đỉnh bằng các số > 0, đỉnh có màu bằng 0 là chưa gán màu.
- - gán đỉnh đầu tiên là 1. Duyệt các đỉnh còn lại, gán màu cho đỉnh đó bằng số nhỏ nhất khác 0 mà các **đỉnh kề** chưa gán.
+ - Gán đỉnh đầu tiên là 1. Duyệt các đỉnh còn lại, gán màu cho đỉnh đó bằng số nhỏ nhất khác 0 mà các **đỉnh kề** chưa gán.
+`
