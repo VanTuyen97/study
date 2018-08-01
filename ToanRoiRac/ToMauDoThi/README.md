@@ -1,4 +1,5 @@
-## Bài tập tô màu đồ thị
+# Bài tập tô màu đồ thị
+## Đầu bài
 **Mệnh đề**: Cho G là đồ thị với mọi đỉnh đều có bậc ≤ k. Nếu G liên thông và không chính quy, vậy thì χ(G) ≤ k.<br>
 Chứng minh của mệnh đề này cho chúng ta cách xây dựng thứ tự các đỉnh để thuật toán tham lam tô màu đỉnh dùng không quá k màu cho đồ thị không chính quy. Bài tập này yêu cầu bạn cài đặt thuật toán này.
 
@@ -29,7 +30,7 @@ Dữ liệu vào dothi.txt         Dữ liệu ra dothitomau.dot
                                     1 --5;
                               }
 ```
-**Giải**:<br>
+## Giải<br>
 - Dựa theo "nhiệm vụ", ta cần sắp xếp dãy các đỉnh theo thứ tự phù hợp: chứng minh cho biểu đồ **liên thông** và **không chính quy**.
   - Chọn một đỉnh trong G có bậc ≤ k − 1. Gán nó là v(n).
   - Liệt kê cho các hàng xóm của vn theo thứ tự là: v(n−1); v(n−2); · · · ; v(n−r):
