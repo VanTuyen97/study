@@ -43,5 +43,5 @@ Dữ liệu vào dothi.txt         Dữ liệu ra dothitomau.dot
  - Gán màu cho các đỉnh bằng các số > 0, đỉnh có màu bằng 0 là chưa gán màu.
  - Gán đỉnh đầu tiên là 1. Duyệt các đỉnh còn lại, gán màu cho đỉnh đó bằng số nhỏ nhất khác 0 mà các **đỉnh kề** chưa gán.
  - ngoài ra còn sử dụng một số suy luận: 
-  - vì có n đỉnh, suy ra bậc tối đa là n-1, suy ra số màu tối đa để tô cho đồ thị <= (n-1) +1 = n.
+   - vì có n đỉnh, suy ra bậc tối đa là n-1, suy ra số màu tối đa để tô cho đồ thị <= (n-1) +1 = n.
   
