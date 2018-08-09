@@ -46,13 +46,13 @@ vector<string> TreeString::getNeighbor(string point) {//su dung khu de quy
 }
 
 void TreeString::getNeighbor(vector<string> * vec, Node * current, string point, int deep, int ignore) {
-	if (current->visted)//cac phan tu trong nhanh nay da duyet het
+	if (current->visted == VISITED)//cac phan tu trong nhanh nay da duyet het
 		return;
 
 	if ((deep == ignore)) {
 		point.at(deep) = current->character;
 		if (current->isleaf) {//la node can bo qua va la nut la
-			if (current->visted == false)//dinh nay chua duyet
+			if (current->visted == NONE)//dinh nay chua duyet
 				(*vec).push_back(point);
 		}else {//la node can bo qua va khong la nut la
 			deep += 1;
@@ -64,7 +64,7 @@ void TreeString::getNeighbor(vector<string> * vec, Node * current, string point,
 
 	}else{
 		if (current->isleaf) {//khong la node can bo qua va la nut la
-			if (current->visted == false)//dinh nay chua duyet
+			if (current->visted == NONE)//dinh nay chua duyet
 				(*vec).push_back(point);
 		}
 		else {//khong la node can bo qua va khong la nut la
@@ -99,7 +99,7 @@ string TreeString::getPointFree() {
 	string result;
 	string empty;
 	for (int i = 0; i < 23; i++) {
-		if ((head->child[i] != nullptr) && (head->child[i]->visted == false)) {//neu co nhanh nay
+		if ((head->child[i] != nullptr) && (head->child[i]->visted == NONE)) {//neu co nhanh nay
 			result = this->getPointFree(head->child[i], empty);
 			if (result.length() == 5)
 				return result;
@@ -113,7 +113,7 @@ bool TreeString::markVisited(string point) {//danh dau dinh la da tham
 	if (leaf == nullptr)
 		return false;
 	else {
-		leaf->visted = true;
+		leaf->visted = VISITED;
 		return true;
 	}
 }
@@ -141,6 +141,86 @@ int TreeString::countInterconnected() {//dem so thanh phan lien thong
 	return count;
 }
 
+void TreeString::resetMark(){//bo danh dau cho toan bo cay
+	this->resetMark(head);
+}
+
+vector <string> TreeString::shortDist(string u, string v) {//tim dương di ngan nhat tu u den v
+	this->resetMark();
+	std::transform(u.begin(), u.end(), u.begin(), ::tolower);//chuyen chu hoa thanh thuong
+	std::transform(v.begin(), v.end(), v.begin(), ::tolower);//chuyen chu hoa thanh thuong
+	vector<string> dist;
+	if (this->getLeaf(u) == nullptr)
+		return dist;
+	if (this->getLeaf(v) == nullptr)
+		return dist;
+	this->dijkstra(u);//dung thuat toan dijkstra
+
+	//lay duong di
+	Node * current;
+	string point;
+	if ((current = this->getLeaf(v))->visted != VISITED)//dinh v khong nam trong cung thanh phan lien thong voi u
+		return dist;
+	dist.push_back(v);
+	while(current->prev.compare(u) != 0){
+		dist.push_back(current->prev);
+		current = this->getLeaf(current->prev);
+	}
+	dist.push_back(u);
+	return dist;
+}
+
+void TreeString::resetMark(Node * current) {//bo danh dau cho mot nhanh
+	current->visted = NONE;
+	current->dist = -1;
+	if (current->isleaf)//la nut la
+		return;
+
+	for (int i = 0; i < 23; i++) {
+		if (current->child[i] != nullptr) {
+			resetMark(current->child[i]);
+		}
+	}
+}
+
+void TreeString::dijkstra(string point) {//dung thuat toan dijkstra voi dinh point
+	vector<string> listPoint;//chua cac dinh va do dai tam thoi cua chung
+	vector<string> pointNeighbor;//chua cac dinh ke
+	Node * leaf;
+	listPoint.push_back(point);
+	leaf = this->getLeaf(point);
+	leaf->dist = 0;
+	leaf->visted = TEMPORATY;//danh dau la chua gia tri tam thoi
+
+	while (listPoint.size() > 0) {
+		string min = listPoint[0];//dinh co khoang cach nho nhat
+		int length = listPoint.size();
+		int indexMin = 0;
+		for (int i = 1; i < length; i++) {//tim dinh co do dai nho nhat
+			if ((this->getLeaf(min)->dist) > (this->getLeaf(listPoint[i])->dist)) {//neu khoang cach min lon hon khoang cach dinh hien tai thi thay the min
+				min = listPoint[i];
+				indexMin = i;
+			}
+		}
+		listPoint.erase(listPoint.begin() + indexMin);//xoa dinh
+
+		pointNeighbor = this->getNeighbor(min);//tim cac dinh hang xom
+		length = pointNeighbor.size();
+		Node * leafMin = this->getLeaf(min);
+		for (int i = 0; i < length; i++) {
+			Node * leaf = this->getLeaf(pointNeighbor[i]);
+			if ((leaf->dist == -1) || (leafMin->dist + 1 < leaf->dist)) {//neu dinh ke co khang cach lơn hon khoang cach tu min + 1
+				leaf->dist = leafMin->dist + 1;
+				leaf->prev = min;
+				if (leaf->visted == NONE) {
+					listPoint.push_back(pointNeighbor[i]);
+					leaf->visted = TEMPORATY;//danh dau la dinh co gia tri tam thoi
+				}
+			}
+		}
+		leafMin->visted = VISITED;
+	}
+}
 
 Node * TreeString::getLeaf(string point) {//lay nut la cua dinh
 	int indexNode[5];
@@ -162,11 +242,11 @@ string TreeString::getPointFree(Node * current, string str) {//lay dinh chua duy
 	string empty;
 	string character(1,current->character);
 	str.append(character);
-	if (current->visted)//neu nhan nay da duyet
+	if (current->visted == VISITED)//neu nhan nay da duyet
 		return empty;
 
 	if (current->isleaf) {//la nut la
-		if (current->visted == false)
+		if (current->visted == NONE)
 			return str;
 	}
 
@@ -177,7 +257,7 @@ string TreeString::getPointFree(Node * current, string str) {//lay dinh chua duy
 				return point;
 		}
 	}
-	current->visted = true;//danh dau nhanh nay da duyet het
+	current->visted = VISITED;//danh dau nhanh nay da duyet het
 	return empty;
 }
 
