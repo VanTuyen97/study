@@ -39,6 +39,6 @@ Lấy một đỉnh chưa duyệt và dùng thuật toán bfs duyệt hết từ
 Với mỗi nút trong cây thêm các biến đã duyệt, đã xóa.
 - **Đường đi ngắn nhất từ u đến v**.<br>
 Dùng thuật toán dijkstra bắt đầu từ đỉnh u đến hết thành phần liên thông, độ dài các cạnh là 1. Mỗi đỉnh đánh dấu.<br>
-Thêm vào mỗi nút xâu nút trước đó, khoảng cách từ u, tạo một vector chứa các đỉnh đã được duyệt và chưa duyệt đỉnh kề.
-- Từ đó từ đỉnh v lấy các nút trước đó đến u, đảo ngược <br>
+Thêm vào mỗi nút xâu nút trước đó, khoảng cách từ u, tạo một vector chứa các đỉnh đã được duyệt và chưa duyệt đỉnh kề.<br>
+Từ đó từ đỉnh v lấy các nút trước đó đến u, đảo ngược <br>
 ⇒ đường đi ngắn nhất.
