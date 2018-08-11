@@ -1,7 +1,7 @@
 # Tìm kiếm trên đồ thị lớn
 ## Đầu bài
 
-Xét tập dữ liệu [sgb-words.txt](../ToanRoiRac/src/sgb-words.txt).
+Xét tập dữ liệu [sgb-words.txt](../src/sgb-words.txt).
 Tập dữ liệu này chứa phần lớn các từ tiếng Anh độ dài 5. Từ dữ liệu này, ta xây dựng đồ thị G = (V, E) với tập đỉnh V = “mọi từ trong sgb-words”, và giữa hai từ u và v trong G có cạnh nối nếu u, v khác nhau ở đúng một vị trí.
 Dễ thấy, trong đồ thị G, dãy từ
 ```
