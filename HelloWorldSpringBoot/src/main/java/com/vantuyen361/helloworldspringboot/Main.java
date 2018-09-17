@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author TuyenNV22
+ * @author Tuyen
  */
 @RestController
 @EnableAutoConfiguration
