@@ -20,7 +20,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 public class Apache {
     public static void main(String[] args) throws IOException {
         HttpClient client = new DefaultHttpClient();
-        HttpGet request1 = new HttpGet("http://171.244.43.172");//get request to URL
+        HttpGet request1 = new HttpGet(args[0]);//get request to URL
         HttpResponse response1 = client.execute(request1);
         int code = response1.getStatusLine().getStatusCode();
         
