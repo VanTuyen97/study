@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.vantuyen361.studyspring.AOP.argAdvice;
+package com.vantuyen361.studyspring.AOP.DeclareAdvice;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -19,10 +19,17 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @ComponentScan
 @Configuration
 public class Main {
-    public static void main(String []args){
-        ApplicationContext context = new AnnotationConfigApplicationContext(Main.class);
-        TargetObject object = (TargetObject)context.getBean("targetObject");
+
+    public static void main(String[] args) {
+        ApplicationContext context = new AnnotationConfigApplicationContext(com.vantuyen361.studyspring.AOP.DeclareAdvice.Main.class);
+        TargetObject object = (TargetObject) context.getBean("targetObject");
         System.out.println("the target object is created>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        try {
+            object.throwException("run throwException method");
+        } catch (Exception e) {
+
+        }
         object.setName("tuyen");
+        object.getName();
     }
 }
