@@ -5,24 +5,28 @@
  */
 package com.vantuyen361.helloworldspringboot.RestService;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author TuyenNV22
  */
 public class Greeting {
     private final long id;
-    private final String content;
+    private final Map<String, String> content = new HashMap();
 
-    public Greeting(long id, String content) {
+    public Greeting(long id, String name, String age) {
         this.id = id;
-        this.content = content;
+        this.content.put("name", name);
+        this.content.put("age", age);
     }
 
     public long getId() {
         return id;
     }
 
-    public String getContent() {
+    public Map<String, String> getContent() {
         return content;
     }
 }
