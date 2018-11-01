@@ -6,10 +6,17 @@
 package com.vantuyen361.selenium.start;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.function.Function;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  *
@@ -21,9 +28,10 @@ public class FirstTestCase {
         System.setProperty("webdriver.chrome.driver", FirstTestCase.getFilePath("chromedriver.exe"));//must put on new WebDriver
         WebDriver driver = new ChromeDriver();// Create a new instance of the Firefox driver
 
+        FirstTestCase.wait(driver);
         // Load a new web page in the current browser window
         driver.get("http://www.store.demoqa.com");
-        FirstTestCase.webElement(driver);
+        System.out.println(driver.findElement(By.xpath("//nav[@id='footer']")).getAttribute("class"));
         //Wait for 5 Sec
         Thread.sleep(5000);
 
@@ -80,8 +88,9 @@ public class FirstTestCase {
 
     /**
      * interact with element
+     *
      * @param driver
-     * @throws InterruptedException 
+     * @throws InterruptedException
      */
     public static void webElement(WebDriver driver) throws InterruptedException {
         WebElement e = driver.findElement(By.xpath("//input[@name=\"s\"]"));
@@ -105,8 +114,9 @@ public class FirstTestCase {
 
     /**
      * find a or more element in page
+     *
      * @param driver
-     * @throws InterruptedException 
+     * @throws InterruptedException
      */
     public static void findElement(WebDriver driver) throws InterruptedException {
         WebElement e = driver.findElement(By.id("id"));
@@ -116,7 +126,7 @@ public class FirstTestCase {
         e = driver.findElement(By.partialLinkText("link in tag <a>"));
         e = driver.findElement(By.xpath("use xpath techniques"));
         e = driver.findElement(By.cssSelector("input[value=\"value\"]"));
-        
+
         List<WebElement> list = driver.findElements(By.id("id"));
         list = driver.findElements(By.name("name"));
         list = driver.findElements(By.className("class"));
@@ -126,4 +136,52 @@ public class FirstTestCase {
         list = driver.findElements(By.cssSelector("input[value=\"value\"]"));
     }
 
+    public static void wait(WebDriver driver) {
+        //1. wait for a certain amount of time before (from load page success) throwing an exception that it cannot find the element on the page
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+
+        //2. amount of time to wait for a page load to complete before throwing an error
+        driver.manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS);
+
+        //3. amount of time to wait for an asynchronous script to finish execution before throwing an error
+        driver.manage().timeouts().setScriptTimeout(100, TimeUnit.SECONDS);
+
+        //3. 
+        FluentWait fluentWait = new FluentWait(driver);
+        //Specify the timout of the wait
+        fluentWait.withTimeout(5000, TimeUnit.MILLISECONDS);
+        //Sepcify polling time
+        fluentWait.pollingEvery(250, TimeUnit.MILLISECONDS);// the loop is execute: thread will sleeping 250ms, after each check condition (in until() method). 
+        //Specify what exceptions to ignore
+        fluentWait.ignoring(NoSuchElementException.class); //This is how we specify the condition to wait on.
+        //This is what we will explore more in this chapter
+        fluentWait.until(ExpectedConditions.alertIsPresent());
+        //can use Predicate to alter (allway return boolean)
+        Function<WebDriver, WebElement> function = new Function<WebDriver, WebElement>() {
+            public WebElement apply(WebDriver arg0) {
+                System.out.println("Checking for the element!!");
+                WebElement element = arg0.findElement(By.id("target"));
+                if (element != null) {
+                    System.out.println("Target element found");
+                }
+                return element;
+            }
+        };
+        fluentWait.until(function);
+        
+
+        //4. condition wait
+        WebDriverWait wait = new WebDriverWait(driver, 10);//param is WebDriver and timeout
+        driver.get("http://www.store.demoqa.com");
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("")));
+    }
+
+    /**
+     * execute javascript command console
+     *
+     * @param driver
+     */
+    public static void javascriptExecutor(WebDriver driver) {
+        Boolean isJqueryCallDone = (Boolean) ((JavascriptExecutor) driver).executeScript("return jQuery.active==0");
+    }
 }
