@@ -14,11 +14,6 @@ import java.io.IOException;
  */
 public class Frame extends Page {
 
-    public Frame() throws IOException {
-        super();
-        this.urlPage = this.properties.getProperty("facebook.url");
-    }
-
     public void getWindowHandle() {
         this.log("GetWindowHandle Command", this.driver.getWindowHandle());
     }

@@ -16,15 +16,14 @@ public class Main {
     public static void main(String[] args) throws InterruptedException, IOException {
 
         Facebook facebook = new Facebook();
-        
-        Thread.sleep(1000);
-        facebook.loadPage();
-        
+
         Thread.sleep(1000);
         facebook.login();
-        
+
+        Thread.sleep(1000);
+        facebook.createPost();
+
         Thread.sleep(5000);
         facebook.quit();
-        
     }
 }

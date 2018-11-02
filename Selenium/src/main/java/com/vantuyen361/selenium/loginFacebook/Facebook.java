@@ -16,25 +16,34 @@ import org.openqa.selenium.WebElement;
  * @author TuyenNV22
  */
 public class Facebook extends Page{
-    public Facebook() throws IOException{
-        super();
-        this.urlPage = this.properties.getProperty("facebook.url");
-    }
     
     /**
      * login facebook
      */
-    public void login(){
+    public boolean login() throws InterruptedException{
+        this.setUrlPage("facebook.url.login");
+        this.loadPage();
         //set email text
-        WebElement email = this.driver.findElement(By.xpath("//input[@data-testid='royal_email']"));
-        email.sendKeys(properties.getProperty("facebook.email"));
+        this.sendkey(By.xpath("//input[@name='email']"),properties.getProperty("facebook.email"));
         
         //set password text
-        WebElement password = this.driver.findElement(By.xpath("//input[@data-testid='royal_pass']"));
-        password.sendKeys(properties.getProperty("facebook.password"));
+        this.sendkey(By.xpath("//input[@name='pass']"), properties.getProperty("facebook.password"));
         
         //click button login
-        WebElement loginButton = this.driver.findElement(By.xpath("//input[@data-testid='royal_login_button']"));
+        WebElement loginButton = this.findElement(By.xpath("//button[@name='login']"));
         loginButton.submit();
+        if(!this.validPage("login"))
+            this.log("login success");
+        return !this.validPage("login");
+    }
+    /**
+     * create post in facebook
+     */
+    public void createPost() throws InterruptedException{
+        this.sendkey(By.xpath("//textarea[@name='xhpc_message']"), "this text run by selenium framework");
+        Thread.sleep(1000);
+        this.sendkey(By.xpath("//input[@name='composer_photo[]']"), Page.getFilePath("other/wheelcolors.jpg"));
+        this.log("was post image");
+        this.click(By.xpath("//button[@data-testid='react-composer-post-button']"));
     }
 }
