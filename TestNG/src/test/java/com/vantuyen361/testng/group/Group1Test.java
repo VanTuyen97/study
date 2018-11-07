@@ -7,16 +7,14 @@ package com.vantuyen361.testng.group;
 
 import org.testng.annotations.Test;
 
+import com.vantuyen361.testng.Support;
+
 /**
  *
  * @author TuyenNV22
  */
-public class Group1NGTest {
-    
-    public void log(String message) {
-        System.out.println("Group1NGTest: " + message);
-    }
-    
+public class Group1Test extends Support{
+	
     @Test(groups = {"group1"})
     public void test1() {
         log("test1 method");

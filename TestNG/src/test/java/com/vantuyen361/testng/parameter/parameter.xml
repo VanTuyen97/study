@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Parameter">
+    <!--use <group> tag -->
+    <test name="Parameter">
+        <parameter name="name" value="Tuyen"/>
+        <parameter name="age" value="21"/>
+        <packages>
+            <package name="com.vantuyen361.testng.parameter"></package>
+        </packages>
+    </test>
+
+</suite>

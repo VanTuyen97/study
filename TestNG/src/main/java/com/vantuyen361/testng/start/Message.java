@@ -1,4 +1,4 @@
-package com.vantuyen361.testng;
+package com.vantuyen361.testng.start;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

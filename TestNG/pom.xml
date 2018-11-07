@@ -9,6 +9,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <resource-test>src/test/java</resource-test>
     </properties>
     
     <repositories>
@@ -29,4 +30,36 @@
         </dependency>
 
     </dependencies>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.18.1</version>
+                <configuration>
+                    <forkCount>0</forkCount>
+                    <suiteXmlFiles>
+                        <!--config file testng.xml will run (use in netbean)-->
+                        <!--<suiteXmlFile>${resource-test}/testng.xml</suiteXmlFile>-->
+                        <!--<suiteXmlFile>${resource-test}/com/vantuyen361/testng/annotation/annotation.xml</suiteXmlFile>-->
+                        <!--<suiteXmlFile>${resource-test}/com/vantuyen361/testng/dependent/dependent.xml</suiteXmlFile>-->
+                        <!--<suiteXmlFile>${resource-test}/com/vantuyen361/testng/group/group.xml</suiteXmlFile>-->
+                        <!--<suiteXmlFile>${resource-test}/com/vantuyen361/testng/priority/priority.xml</suiteXmlFile>-->
+                        <!--<suiteXmlFile>${resource-test}/com/vantuyen361/testng/start/start.xml</suiteXmlFile>-->
+                        <!--<suiteXmlFile>${resource-test}/com/vantuyen361/testng/skip/skip.xml</suiteXmlFile>-->
+                        <suiteXmlFile>${resource-test}/com/vantuyen361/testng/parameter/parameter.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

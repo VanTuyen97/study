@@ -15,68 +15,70 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.vantuyen361.testng.Support;
+
 /**
  *
  * @author TuyenNV22
  */
-public class AnnotationNGTest {
+public class AnnotationTest extends Support {
 
-    public AnnotationNGTest() {
+    public AnnotationTest() {
     }
     
     @BeforeMethod
     public void beforeMethod() {
-        System.out.println("AnnotationNGTest: before method");
+        log("before method");
     }
 
     @AfterMethod
     public void afterMethod() {
-        System.out.println("AnnotationNGTest: after method");
+        log("after method");
     }
 
     @BeforeClass
     public void beforeClass() {
-        System.out.println("AnnotationNGTest: before class");
+        log("before class");
     }
 
     @AfterClass
     public void afterClass() {
-        System.out.println("AnnotationNGTest: after class");
+        log("after class");
     }
 
     @BeforeTest
     public void beforeTest() {
-        System.out.println("AnnotationNGTest: before test");
+        log("before test");
     }
 
     @AfterTest
     public void afterTest() {
-        System.out.println("AnnotationNGTest: after test");
+        log("after test");
     }
 
     @BeforeSuite
     public void beforeSuite() {
-        System.out.println("AnnotationNGTest: before suite");
+        log("before suite");
     }
 
     @AfterSuite
     public void afterSuite() {
-        System.out.println("AnnotationNGTest: after suite");
+        log("after suite");
     }
 
     @Test
     public void test1() {
-        System.out.println("AnnotationNGTest: test 1");
+        log("test 1");
     }
 
     @Test
     public void test2() {
-        System.out.println("AnnotationNGTest: test 2");
+        log("test 2");
     }
 
     @Test
     public void test3() {
-        System.out.println("AnnotationNGTest: test 3");
+        log("test 3");
     }
 
 }

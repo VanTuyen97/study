@@ -3,21 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.vantuyen361.testng;
+package com.vantuyen361.testng.start;
 
 import org.testng.annotations.Test;
+
+import com.vantuyen361.testng.Support;
 
 /**
  *
  * @author TuyenNV22
  */
-public class MessageNGTest {
+public class MessageTest extends Support{
     /**
      * Test of setMessage method, of class Message.
      */
     @Test
     public void testSetMessage() {
-        System.out.println("testSetMessage");
+        log("testSetMessage");
     }
 
     /**
@@ -25,7 +27,7 @@ public class MessageNGTest {
      */
     @Test
     public void testPrintMessage() {
-        System.out.println("testPrintMessage");
+        log("testPrintMessage");
     }
 
     /**
@@ -33,7 +35,7 @@ public class MessageNGTest {
      */
     @Test
     public void testSalutationMessage() {
-        System.out.println("testSalutationMessage");
+        log("testSalutationMessage");
     }
     
 }
