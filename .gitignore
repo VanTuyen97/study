@@ -4,3 +4,21 @@
 /studyspring/target/
 /Selenium/target/
 *.classpath
+/TestNG/target/
+/TestNG/nbproject/
+/Test/target/
+
+# Eclipse
+.project
+.settings
+.classpath
+.metadata
+
+# NetBeans specific #
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xm…
