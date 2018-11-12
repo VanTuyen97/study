@@ -14,6 +14,6 @@ public class Support {
      * @param message
      */
     public void log(String message) {
-        System.out.println(this.getClass().getName() + ":   \t" + message);
+        System.out.println(Thread.currentThread().getStackTrace()[2].toString() + ":   \t" + message);
     }
 }

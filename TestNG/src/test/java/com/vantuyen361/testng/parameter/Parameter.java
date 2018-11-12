@@ -24,6 +24,6 @@ public class Parameter extends Support {
     @Test
     @Parameters({"name", "age"})
     public void test1(String name, int age) {
-        log("test1 >>>> name-" + name + ", age-" + age);
+        log("name-" + name + ", age-" + age);
     }
 }
