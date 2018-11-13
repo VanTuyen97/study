@@ -47,6 +47,33 @@
 #     @driver.close
 # end
 
-Given("I'm {int} \\(year)(s) old!") do |age|
-  puts "age: #{age}"
+# Given("I'm {int} \\(year)(s) old!") do |age|
+#   puts "age: #{age}"
+# end
+Given(/^I am at facebook @ work login page$/) do
+  @login = FBwork1st.new(@browser)
+  @browser.get "https://fpt.facebook.com/groups/237769780236209/"
+end
+
+When(/^I hit log in$/) do
+  @login.login
+end
+
+When(/^I choose my branch$/) do
+  @choose = FBwork2nd.new(@browser)
+  @choose.choose
+end
+
+When(/^I input my info as "(.*)" and "(.*)" and signin$/) do |email, pw|
+  @signin = FBwork3rd.new(@browser)
+  @signin.inputinfo(email, pw)
+end
+
+When(/^I input my post as "(.*)"$/) do |post|
+  @post = FBwork4th.new(@browser)
+  @post.writepost(post)
+end
+
+Then(/^I should see the post$/) do
+  @post.verifypost
 end
