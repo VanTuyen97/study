@@ -9,4 +9,4 @@ Feature: facebook @ work
         Then login facebook success
         Examples:
             | email              | pw         |
-            | email              | password |
+            | email         | password |

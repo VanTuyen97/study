@@ -1,18 +1,18 @@
-require 'selenium-webdriver'
 require 'rubygems'
 
 # support many method for selenium
 class Support
-    @browser = nil
+    # docs https://www.rubydoc.info/gems/selenium-webdriver/3.141.0/Selenium/WebDriver/Driver
+    @browser = nil 
     @url = nil
     @wait = nil
 
-    #setter @browser
+    # setter @browser
     def browser=(browser)
         @browser = browser
     end
 
-    #getter @browser
+    # getter @browser
     def browser
         return @browser
     end

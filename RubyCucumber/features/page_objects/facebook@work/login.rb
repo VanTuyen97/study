@@ -17,5 +17,9 @@ module Facebook
       @wait.until {find_by_xpath("//*[@name='login']").enabled?}
       find_by_xpath("//*[@name='login']").click
     end
+
+    def verify()
+      return !(@browser.current_url.include? "login")
+    end
   end
 end

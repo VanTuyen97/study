@@ -15,5 +15,5 @@ When("I click login button") do
 end
 
 Then("login facebook success") do
-  
+  assert(@browser.verify(),"login failure")
 end
