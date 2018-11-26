@@ -20,13 +20,25 @@
             <PatternLayout pattern="%d{HH:mm:ss.SSS} ${user} [%t] %-5level %logger{36} - %msg%n" />
         </File>
         
+        <!-- config multiple log file -->
+        <!-- 
+        <RollingFile
+            name="file"
+            fileName="${dir}/app.log"
+            filePattern="${dir}/app-$${date:yyyy-MM}.%i.log">
+            <PatternLayout>
+                <Pattern>%d{HH:mm:ss.SSS} %c{36}: %-5level %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="1MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="10" />
+        </RollingFile>
+         -->
     </Appenders>
     <Loggers>
-        <Logger name="com.vantuyen361.Logging.start.Start" level="error"  additivity="false">
-            <AppenderRef ref="group"/>
-        </Logger>
-        <Root level="error">
-            <AppenderRef ref="Console" />
+        <Root level="debug">
+            <AppenderRef ref="group" />
         </Root>
     </Loggers>
 </Configuration>
