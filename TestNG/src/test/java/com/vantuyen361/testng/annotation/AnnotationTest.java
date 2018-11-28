@@ -28,57 +28,57 @@ public class AnnotationTest extends Support {
     
     @BeforeMethod
     public void beforeMethod() {
-        log("before method");
+        log("");
     }
 
     @AfterMethod
     public void afterMethod() {
-        log("after method");
+        log("");
     }
 
     @BeforeClass
     public void beforeClass() {
-        log("before class");
+        log("");
     }
 
     @AfterClass
     public void afterClass() {
-        log("after class");
+        log("");
     }
 
     @BeforeTest
     public void beforeTest() {
-        log("before test");
+        log("");
     }
 
     @AfterTest
     public void afterTest() {
-        log("after test");
+        log("");
     }
 
     @BeforeSuite
     public void beforeSuite() {
-        log("before suite");
+        log("");
     }
 
     @AfterSuite
     public void afterSuite() {
-        log("after suite");
+        log("");
     }
 
     @Test
     public void test1() {
-        log("test 1");
+        log("");
     }
 
     @Test
     public void test2() {
-        log("test 2");
+        log("");
     }
 
     @Test
     public void test3() {
-        log("test 3");
+        log("");
     }
 
 }

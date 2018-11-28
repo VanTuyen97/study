@@ -19,19 +19,17 @@
 
 ## [Test Suite](https://testng.org/doc/documentation-main.html#testng-xml): to execute so many test cases on a run.
 
-1. **`<suite>`**:
-   - **`name`**: 
-   - **`verbose`**: 
-   - **`allow-return-values="true"`**: 
-2. **`<test>`**:
-   - **`name`**: specific name of test.
-   - **`allow-return-values="true"`**: 
-3. **`<classes>`**:
-4. **`<class>`**: 
-5. **`<packages>`**:
-6. **`<package>`**:
-   - **`name`**: specific name of package
-
+- [Test Group](https://testng.org/doc/documentation-main.html#test-groups): groupings of test methods.
+- [Group method](https://testng.org/doc/documentation-main.html#method-groups): Can also exclude or include individual methods.
+- [Groups of groups](https://testng.org/doc/documentation-main.html#groups-of-groups): Groups can also include other groups.
+- [Exclusion groups](https://testng.org/doc/documentation-main.html#exclusions): TestNG allows you to include groups as well as exclude them.
+- [Partial groups](https://testng.org/doc/documentation-main.html#partial-groups): Can define groups at the class level and then add groups at the all method level.
+- [Parameters](https://testng.org/doc/documentation-main.html#parameters): Test methods allow pass parammeter from testng.xml file.
+    - [Parameters with DataProviders](https://testng.org/doc/documentation-main.html#parameters-dataproviders): Pass complex parameters (array) to test method. This test will run muntiple times.
+- [Dependencies](https://testng.org/doc/documentation-main.html#dependent-methods): Need a test methods to be invoked before this method is call.
+    - [Dependencies with annotations](https://testng.org/doc/documentation-main.html#dependencies-with-annotations): Use the attributes dependsOnMethods or dependsOnGroups of **@Test** annotation.
+    - [Dependencies in XML](https://testng.org/doc/documentation-main.html#dependencies-in-xml):  Can specify your group dependencies in the testng.xml file.
+- [Parallelism and time-outs](https://testng.org/doc/documentation-main.html#parallel-running): Run tests in separate threads in various ways.
 ### Example
 
    <details>

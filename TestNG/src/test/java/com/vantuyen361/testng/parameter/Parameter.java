@@ -22,7 +22,7 @@ public class Parameter extends Support {
      * @param age
      */
     @Test
-    @Parameters({"name", "age"})
+    @Parameters({"name", "age"}) //or use @Test(parameters={"name", "age"})
     public void test1(String name, int age) {
         log("name-" + name + ", age-" + age);
     }

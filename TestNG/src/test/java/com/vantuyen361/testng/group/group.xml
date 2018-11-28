@@ -5,13 +5,21 @@
 	<!--use <group> tag -->
 	<test name="group">
 		<groups>
-			<!-- run all test method has group's name is group1  -->
+			<!-- Groups of groups -->
+			<define name="functest">
+				<include name="group2" />
+			</define>
+
+			<!-- run all test method has group's name is group1 -->
 			<run>
-				<include name="group1"></include>
+				<include name="group1" />
+				<exclude name="group3"/>
+				<include name="functest" />
 			</run>
 		</groups>
+
 		<packages>
-			<package name="com.vantuyen361.testng.group"></package>
+			<package name="com.vantuyen361.testng.group" />
 		</packages>
 	</test>
 

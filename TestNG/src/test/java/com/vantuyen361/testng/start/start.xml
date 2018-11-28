@@ -7,7 +7,12 @@
 
 		<classes>
 
-			<class name="com.vantuyen361.testng.start.MessageTest" />
+			<class name="com.vantuyen361.testng.start.MessageTest">
+				<methods>
+					<include name="testSetMessage"></include>
+					<exclude name="testPrintMessage"></exclude>
+				</methods>
+			</class>
 
 		</classes>
 

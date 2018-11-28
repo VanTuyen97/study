@@ -19,7 +19,7 @@ public class MessageTest extends Support{
      */
     @Test
     public void testSetMessage() {
-        log("testSetMessage");
+        log("");
     }
 
     /**
@@ -27,7 +27,7 @@ public class MessageTest extends Support{
      */
     @Test
     public void testPrintMessage() {
-        log("testPrintMessage");
+        log("");
     }
 
     /**
@@ -35,7 +35,7 @@ public class MessageTest extends Support{
      */
     @Test
     public void testSalutationMessage() {
-        log("testSalutationMessage");
+        log("");
     }
     
 }

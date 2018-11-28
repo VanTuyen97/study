@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Exception">
+
+    <!--the first time run testng -->
+    <test name="Exception">
+
+        <classes>
+
+            <class name="com.vantuyen361.testng.exception.ExceptionTest" />
+
+        </classes>
+
+    </test>
+
+</suite>
