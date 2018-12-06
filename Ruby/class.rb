@@ -1,13 +1,10 @@
 class Person
-    @name
-    @age
-    def initialize (name, age)
-        @name = name
-        @age = age
-    end
-    
-    def get_name ()
-        return name
+    # attr_reader(:name, :age) # getter method
+    # attr_writer(:name, :age) # setter method
+    attr_accessor(:name, :age) # bother getter and setter method
+    def initialize
+        @name = "tuyen" 
+        @age = 60
     end
 
     def display()
@@ -15,9 +12,7 @@ class Person
     end
 end
 
-class Student < Person
-    
-end
-
-person = Student.new("tuyen", 20)
-person.display()
+person = Person.new
+person.name = "Tuyen97" # set value Tuyen97
+print person.name # => Tuyen97
+# person.display()
