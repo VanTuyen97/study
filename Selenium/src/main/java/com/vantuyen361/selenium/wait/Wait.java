@@ -7,8 +7,11 @@ package com.vantuyen361.selenium.wait;
 
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
@@ -16,9 +19,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * @author TuyenNV22
  */
 public class Wait {
-
-    public static void untilJqueryIsDone(WebDriver driver) {
-        untilJqueryIsDone(driver, 30l);
+    private WebDriverWait wait;
+    
+    public Wait(WebDriver driver, long timeout) {
+        this.wait = new WebDriverWait(driver, timeout);
+    }
+    
+    /**
+     * wait was supported by framework
+     * @param xpath
+     */
+    public void waitExpect(String xpath){
+        this.wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
     }
 
     public static void untilJqueryIsDone(WebDriver driver, Long timeoutInSeconds) {
@@ -32,10 +44,11 @@ public class Wait {
         }, timeoutInSeconds);
     }
 
-    public static void untilPageLoadComplete(WebDriver driver) {
-        untilPageLoadComplete(driver, 30l);
-    }
-
+    /**
+     * wait until load page success
+     * @param driver
+     * @param timeoutInSeconds 
+     */
     public static void untilPageLoadComplete(WebDriver driver, Long timeoutInSeconds) {
         until(driver, (d)
                 -> {
@@ -45,10 +58,6 @@ public class Wait {
             }
             return isPageLoaded;
         }, timeoutInSeconds);
-    }
-
-    public static void until(WebDriver driver, Function<WebDriver, Boolean> waitCondition) {
-        until(driver, waitCondition, 30l);
     }
 
     private static void until(WebDriver driver, Function<WebDriver, Boolean> waitCondition, Long timeoutInSeconds) {
