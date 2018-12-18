@@ -20,8 +20,8 @@ public class Main {
         Thread.sleep(1000);
         facebook.login();
 
-        Thread.sleep(1000);
-        facebook.createPost();
+//        Thread.sleep(1000);
+//        facebook.createPost();
 
         Thread.sleep(5000);
         facebook.quit();

@@ -13,7 +13,7 @@
 
    - [FireFoxDriver](https://github.com/mozilla/geckodriver/releases).
   
-   - [Chrome](https://sites.google.com/a/chromium.org/chromedriver/downloads).
+   - [Chrome](https://sites.google.com/a/chromium.org/chromedriver/downloads): [config](https://sites.google.com/a/chromium.org/chromedriver/capabilities) chrome.
 
 ## Use
 1. [Step 1](https://docs.seleniumhq.org/docs/03_webdriver.jsp#selenium-webdriver-s-drivers): Load browser driver ([WebDriver](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebDriver.html)).
