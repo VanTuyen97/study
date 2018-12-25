@@ -28,57 +28,6 @@ public class AnnotationTest extends Support {
     
     @BeforeMethod
     public void beforeMethod() {
-        log("");
+        System.out.println("nguyen van tuyen");
     }
-
-    @AfterMethod
-    public void afterMethod() {
-        log("");
-    }
-
-    @BeforeClass
-    public void beforeClass() {
-        log("");
-    }
-
-    @AfterClass
-    public void afterClass() {
-        log("");
-    }
-
-    @BeforeTest
-    public void beforeTest() {
-        log("");
-    }
-
-    @AfterTest
-    public void afterTest() {
-        log("");
-    }
-
-    @BeforeSuite
-    public void beforeSuite() {
-        log("");
-    }
-
-    @AfterSuite
-    public void afterSuite() {
-        log("");
-    }
-
-    @Test
-    public void test1() {
-        log("");
-    }
-
-    @Test
-    public void test2() {
-        log("");
-    }
-
-    @Test
-    public void test3() {
-        log("");
-    }
-
 }

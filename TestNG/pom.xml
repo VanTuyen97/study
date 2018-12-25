@@ -58,7 +58,8 @@
                         <!--<suiteXmlFile>${resource-test}/com/vantuyen361/testng/skip/skip.xml</suiteXmlFile>-->
                         <!--<suiteXmlFile>${resource-test}/com/vantuyen361/testng/parameter/parameter.xml</suiteXmlFile>-->
                         <!--<suiteXmlFile>${resource-test}/com/vantuyen361/testng/dataproviders/dataproviders.xml</suiteXmlFile>-->
-                        <suiteXmlFile>${resource-test}/com/vantuyen361/testng/exception/exception.xml</suiteXmlFile>
+                        <!--<suiteXmlFile>${resource-test}/com/vantuyen361/testng/exception/exception.xml</suiteXmlFile>-->
+                        <suiteXmlFile>${resource-test}/com/vantuyen361/testng/factory/factory.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
