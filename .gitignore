@@ -1,4 +1,4 @@
-/HelloWorldSpringBoot/target/
+﻿/HelloWorldSpringBoot/target/
 /Http/target/
 /AssertJ/target/
 /studyspring/target/
@@ -51,3 +51,17 @@ testng.iml
 z_build
 .kobalt
 .DS_Store
+
+# Python Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
