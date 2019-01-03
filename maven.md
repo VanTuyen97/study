@@ -1,7 +1,7 @@
 # Maven
 ## Create jar file
 1. With dependence (scope differ test): 
-   - Run with command: `mvn clean compile assembly:single` 
+   - Run with command: `mvn assembly:single -DdescriptorId=jar-with-dependencies package -DskipTest` 
    - Addition pulgin build
       ```maven
       <build>
