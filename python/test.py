@@ -1,5 +1,6 @@
-print(print.__doc__ + "\n\n\n")
-print(list.__doc__ + "\n\n\n")
-print(map.__doc__ + "\n\n\n")
+def method(a):
+    a += 1
+    for i in range(a):
+        print(i * "*")
 
-array = 1, 2, 3
+method(9)

@@ -16,9 +16,10 @@ def list_structure():
 
     # remove element at index
     copy_array = array[:]
-    # copy_array.remove(1) # remove a element, from 1
-    del copy_array[1:3] # remove elements
+    copy_array.remove(3) # remove a element, from 1
+    # del copy_array[1:3] # remove elements
     print(copy_array)
+    __main__
 
 
 def tuple_structure():
@@ -47,10 +48,13 @@ def dict_structure():
     """
     the same json type
     """
-    dict = {'name': 'tuyen', 'age': 97}
-    print(dict['name']) # access value of element
+    # dic = {'name': 'tuyen', 'age': 97}
+    dic = dict([('name', 'tuyen'), ('age', 97)])
+    print(dic['name']) # access value of element
 
-    dict["birthday"] = 1997
-    print(dict)
+    dic["birthday"] = 1997
+    print(dic)
 
-dict_structure()
+    for key, value in dic.items():
+        print(key, ": ", value)
+list_structure()
