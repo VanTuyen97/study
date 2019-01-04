@@ -1,7 +1,7 @@
 # import module.module1 # import module in package
 # import module.module1 as module1 # import a module use alias
-from module import module1
-# from module import *
+# from module import module1
+from module import *
 # from module.module1 import call_func # or *, import element of module
 
 # print(module1.__name__) # name of module
@@ -17,5 +17,5 @@ from module import module1
 #     import sys # This module provides access to some objects used or maintained
 #     # sys.argv[1] # access argument
 
-person = module1.Person()
+person = Person()
 person.getstring()

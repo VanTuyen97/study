@@ -1,3 +1,2 @@
-import module.module1 as module1
-
-__all__=['module1']
+# any thing to be import to this file will
+from module.module1 import *
