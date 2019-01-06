@@ -11,6 +11,7 @@
             <configuration>
               <archive>
                 <manifest>
+                  <!--Class contain main method-->
                   <mainClass>fully.qualified.MainClass</mainClass>
                 </manifest>
               </archive>
