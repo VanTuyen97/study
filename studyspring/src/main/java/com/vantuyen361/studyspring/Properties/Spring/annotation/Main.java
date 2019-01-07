@@ -7,6 +7,7 @@ package com.vantuyen361.studyspring.Properties.Spring.annotation;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 
 /**
  *
@@ -20,5 +21,6 @@ public class Main {
         System.out.println("entities1: " + entities1.toString() + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         Entities entities2 = (Entities) context.getBean("entities");
         System.out.println("entities2: " + entities2.toString() + ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        ((AbstractApplicationContext) context).close(); // must close context if not use
     }
 }

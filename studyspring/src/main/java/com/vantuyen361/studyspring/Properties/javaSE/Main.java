@@ -10,8 +10,13 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.Reader;
+import java.io.Writer;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.nio.file.Paths;
 import java.util.Properties;
 
@@ -48,9 +53,9 @@ public class Main {
         
         File file = Paths.get(url.toURI()).toFile();
         FileOutputStream out = new FileOutputStream(file);
-        
+        Writer writer = new OutputStreamWriter(out, Charset.forName("UTF-8")); // set charset of string
         this.properties.setProperty(key, value);
-        this.properties.store(out, null);
+        this.properties.store(writer, null);
         out.close();
     }
 
@@ -62,7 +67,8 @@ public class Main {
     private void loadProperties1() throws IOException {
         this.properties = new Properties();
         InputStream stream = this.getClass().getResourceAsStream(this.path);
-        properties.load(stream);
+        Reader reader = new InputStreamReader(stream, Charset.forName("UTF-8"));// set charset of string
+        properties.load(reader);
     }
 
     /**
