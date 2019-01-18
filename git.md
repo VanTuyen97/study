@@ -8,3 +8,6 @@
 5. Checkout:
    - Switch branch: `git checkout <name Branch>`
    - Switch commit: `git checkout <number commit>`
+6. Delete commit on web:
+   - Step 1: `git reset --hard <commit_id>`
+   - Step 2: `git push <origin> <branch> --force `
