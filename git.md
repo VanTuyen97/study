@@ -2,6 +2,7 @@
 1. Add file:
    - Add a file: `git add <file>`
    - Add all file: `git add .`
+   - Unstage (delete the added file): `git reset <file/directory>`
 2. Commit: `git commit -m "<description>"`
 3. Pull: `git pull`
 4. Merge: git merge <from branch>
