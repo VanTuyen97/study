@@ -12,3 +12,5 @@
 6. Delete commit on web:
    - Step 1: `git reset --hard <commit_id>`
    - Step 2: `git push <origin> <branch> --force `
+7. Clone:
+   - clone from branch; `git clone -b <name_branch> link`
