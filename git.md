@@ -14,3 +14,7 @@
    - Step 2: `git push <origin> <branch> --force `
 7. Clone:
    - clone from branch; `git clone -b <name_branch> link`
+8. Config Authentication:
+   - set user: git config [--global] user.name <"name">
+   - set email: git config [--global] user.email <"email">
+   - set password: git config [--global] user.password <"password">
