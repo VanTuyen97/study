@@ -18,3 +18,6 @@
    - set user: git config [--global] user.name <"name">
    - set email: git config [--global] user.email <"email">
    - set password: git config [--global] user.password <"password">
+## Fix error
+1. Fix error **Access denied, fatal: Authentication failed**
+   - go to Credential Manager -> Windows Credentials -> Replace old password
