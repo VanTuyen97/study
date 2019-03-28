@@ -5,15 +5,23 @@
  */
 package com.vantuyen361.studyspring.Bean.Autowired;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
+
 /**
  *
  * @author vantuyen361
  */
-public class Entities {
+@Component
+public class Tuyen extends Person{
+    @Autowired
+    private ApplicationContext context;
+    
+    @Autowired
     private String name;
 
-    public Entities(String name) {
-        this.name = name;
+    public Tuyen() {
     }
     
     @Override

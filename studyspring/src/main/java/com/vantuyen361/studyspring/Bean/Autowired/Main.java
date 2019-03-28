@@ -18,34 +18,18 @@ import org.springframework.util.Assert;
  * @author vantuyen361
  */
 @Component
-public class Main {
+public class Main{    
+    @Autowired
+    public Tuyen tuyen;
     /**
-     * field will set value when object created (accept privated field)
+     * override Context contains this bean
      */
     @Autowired
-    @Qualifier(value = "Person")
-    private Entities person;
-    
-    private Entities student;
-
-    /**
-     * this method will to be call when bean of Main class created
-     * @param student bean by "Student" name
-     */
-    @Autowired 
-    public void setStudent(@Qualifier(value = "Student") Entities student) {
-        this.student = student;
-    }
-    
-    public void assertObject(){
-        Assert.isTrue(person != null, "field was not autowire!");
-        Assert.isTrue(student != null, "getter method was not call!");
-    }
+    public ApplicationContext context;
     
     
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(com.vantuyen361.studyspring.Bean.Autowired.Context.class);
         Main m = (Main)context.getBean(Main.class);
-        m.assertObject();
     }
 }

@@ -19,18 +19,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan
 public class Context {
-    @Bean(name= {"Person"})
-    public Entities person(){
-        return new Entities("Person");
+    
+    @Bean
+    public Integer age(){
+        return 22;
     }
     
-    @Bean(name = {"Student"})
-    public Entities student(){
-        return new Entities("Student");
-    }    
-    
-    @Bean(name = {"Coppy"})
-    public Entities student(@Autowired @Qualifier(value = "Person") Entities e){ //can use inner '()' to specific param
-        return e;
+    @Bean
+    public String name(){
+        return "Tuyen";
     }
 }
