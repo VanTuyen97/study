@@ -163,4 +163,8 @@
    - [submit()](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#submit--): If this current element is a form, or an element within a form, then this will be submitted to the remote server.
   
     </details>
-8. 
+## Tip:
+1. Default, Internet Explorer don't support Scroll: We have to setup `onscroll = true` to browser support this.
+```java
+((JavascriptExecutor) driver).executeScript("onscroll = true; arguments[0].scrollIntoView(true);", e);
+```
