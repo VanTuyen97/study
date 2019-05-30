@@ -150,14 +150,15 @@
   
    - [getTagName()](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#getTagName--): Get the tag name of this element.
   
-   - [getText()](https://docs.seleniumhq.org/docs/03_webdriver.jsp#getting-text-values): Get the visible (i.e).
+   - [getText()](https://docs.seleniumhq.org/docs/03_webdriver.jsp#getting-text-values): Get the visible.
   
-   - [isDisplayed()](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#isDisplayed--): Is this element displayed or not? This method avoids the problem of having to parse an element's "style" attribute.
+   - [isDisplayed()](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#isDisplayed--): visible element by human eye. This method avoids the problem of having to parse an element's "style" attribute.
   
-   - [isEnabled()](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#isEnabled--): Is the element currently enabled or not? This will generally return true for everything but disabled input elements.
+   - [isEnabled()](https://w3c.github.io/webdriver/#is-element-enabled): return true for everything but [disabled](https://html.spec.whatwg.org/#concept-fe-disabled).
   
-   - [isSelected()](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#isSelected--): Determine whether or not this element is selected or not.
-  
+   - [isSelected()](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#isSelected--): true if.
+      - Element is input, type is [checkbox](https://www.w3schools.com/tags/att_input_type_checkbox.asp) or [radio](https://www.w3schools.com/tags/att_input_type_radio.asp) with [checkednes](https://html.spec.whatwg.org/#concept-fe-checked) state.
+      - Element is option, with selectedness state (has a selected attribute).
    - [sendKeys(CharSequence... keysToSend)](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#sendKeys-java.lang.CharSequence...-): Use this method to simulate typing into an element, which may set its value.
   
    - [submit()](https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/WebElement.html#submit--): If this current element is a form, or an element within a form, then this will be submitted to the remote server.
