@@ -15,7 +15,7 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException, IOException {
 
-        Facebook facebook = new Facebook();
+        Facebook facebook = new Facebook(2);
 
         Thread.sleep(1000);
         facebook.login();

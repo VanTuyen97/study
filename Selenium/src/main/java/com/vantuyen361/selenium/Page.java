@@ -32,18 +32,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Page {
 
     public static String globalPath = "/global.properties";
-    protected WebDriver driver;
+    public WebDriver driver;
     protected Properties properties;
     protected String urlPage;
     protected WebDriverWait wait;
 
-    public Page() {
+    public Page(long timeoutSeconds) {
         try {
             this.init();
         } catch (IOException ex) {
             this.log(ex.toString());
             System.exit(0);
         }
+        this.wait = new WebDriverWait(this.driver, timeoutSeconds);
     }
 
     protected void init() throws IOException {
@@ -62,7 +63,6 @@ public class Page {
         ops.addArguments("disable-infobars");//don't allow display string "chrome is being controlled by automated test software" when chrome run
         this.driver = new ChromeDriver(ops);
         this.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);//timeout
-        this.wait = new WebDriverWait(this.driver, 30);
     }
 
     /**

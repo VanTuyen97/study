@@ -14,6 +14,10 @@ import java.io.IOException;
  */
 public class Frame extends Page {
 
+    public Frame(long timeoutSeconds) {
+        super(timeoutSeconds);
+    }
+
     public void getWindowHandle() {
         this.log("GetWindowHandle Command", this.driver.getWindowHandle());
     }

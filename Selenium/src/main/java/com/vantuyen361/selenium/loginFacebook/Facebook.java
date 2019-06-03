@@ -16,6 +16,10 @@ import org.openqa.selenium.WebElement;
  * @author TuyenNV22
  */
 public class Facebook extends Page{
+
+    public Facebook(long timeoutSeconds) {
+        super(timeoutSeconds);
+    }
     
     /**
      * login facebook

@@ -16,6 +16,10 @@ import org.openqa.selenium.Alert;
 public class Alerts extends Page {
     private Alert alert;
 
+    public Alerts(long timeoutSeconds) {
+        super(timeoutSeconds);
+    }
+
     @Override
     protected void init() throws IOException {
         super.init(); //To change body of generated methods, choose Tools | Templates.
@@ -28,7 +32,7 @@ public class Alerts extends Page {
     }
     
     public static void main(String [] args){
-        Alerts alerts = new Alerts();
+        Alerts alerts = new Alerts(2);
         alerts.sendkey();
         alerts.quit();
     }
