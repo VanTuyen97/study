@@ -75,3 +75,26 @@
 1. [Tooldqa.com](http://toolsqa.com/testng/what-is-testng/)
 2. [testng.org](https://testng.org/doc/index.html)
 3. [tutorialspoint.com](http://www.tutorialspoint.com/testng/)
+## Run testNG.xml by command line
+- <details>
+
+    - <details>
+        <summary>Step 1: add plugin <code>maven-surefire-plugin</code></summary>
+
+        ```xml
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.18.1</version>
+            <configuration>
+                <forkCount>0</forkCount>
+                <suiteXmlFiles>
+                    <!-- pattern path file to TtestNG.xml -->
+                    <suiteXmlFile>${project.basedir}src/test/com/vantuyen361/testng/${testNGFile}</suiteXmlFile>
+                </suiteXmlFiles>
+            </configuration>
+        </plugin>
+        ```
+        </details>
+    - Step 2: run `mvn test -DtestNGFile="TestNG.xml"`
+    </details>
