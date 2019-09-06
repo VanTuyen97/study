@@ -60,6 +60,8 @@
                         <!--<suiteXmlFile>${resource-test}/com/vantuyen361/testng/dataproviders/dataproviders.xml</suiteXmlFile>-->
                         <!--<suiteXmlFile>${resource-test}/com/vantuyen361/testng/exception/exception.xml</suiteXmlFile>-->
                         <suiteXmlFile>${resource-test}/com/vantuyen361/testng/factory/factory.xml</suiteXmlFile>
+                        <!-- run by command: "mvn test -DtestNGFile="factory/factory.xml" -->
+                        <!--<suiteXmlFile>${project.basedir}/com/vantuyen361/testng/${testNGFile}</suiteXmlFile>-->
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
