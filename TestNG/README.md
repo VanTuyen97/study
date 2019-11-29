@@ -76,7 +76,7 @@
 2. [testng.org](https://testng.org/doc/index.html)
 3. [tutorialspoint.com](http://www.tutorialspoint.com/testng/)
 ## Run testNG.xml by command line
-- Default: `mvn test -Dsurefire.suiteXmlFiles='<path.xml>'`
+- Default: `mvn test "-Dsurefire.suiteXmlFiles=TestNG.xml"`
 - <details>
     <summary>Set variable in Pom</summary>
 
