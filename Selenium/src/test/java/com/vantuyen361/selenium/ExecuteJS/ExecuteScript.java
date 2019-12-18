@@ -39,7 +39,7 @@ public class ExecuteScript {
         driver.get("https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/JavascriptExecutor.html");
         wait.untilPageLoadComplete(90l);
     }
-    
+
     /**
      * scroll to element
      */

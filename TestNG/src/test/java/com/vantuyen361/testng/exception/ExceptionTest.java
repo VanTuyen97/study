@@ -19,5 +19,6 @@ public class ExceptionTest extends Support {
     public void exceptionTest() {
         log("");//print com.vantuyen361.testng.exception.ExceptionTest.exceptionTest(ExceptionTest.java:19): 
         int i = 2/0; //throw a arithemtic exception 
+        System.out.println(i);
     }
 }
